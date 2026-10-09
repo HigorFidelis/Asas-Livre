@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projetos, voluntariado e doações – Asas Livres</title>
+  <meta name="description" content="Conheça os projetos da Asas Livres, seja voluntário e doe para dar uma segunda chance a animais resgatados do tráfico.">
+  <meta property="og:title" content="Doe e salve uma vida – Asas Livres">
+  <meta property="og:image" content="images/resgate.jpg">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="topo">
+    <div class="conteudo">
+      <a class="logo" href="index.html"><img src="images/logo.svg" alt="" width="32" height="32"> Asas Livres</a>
+      <nav aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="projetos.html" aria-current="page">Projetos</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="membros.html">Novos membros</a>
+        <a class="destaque" href="#doar">Doar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="conteudo secao">
+      <h1>Nossos projetos</h1>
+      <p>Três etapas para que cada animal volte para casa: resgatar, reabilitar e prevenir.</p>
+      <div class="colunas">
+        <article>
+          <picture>
+            <img src="images/resgate.jpg" width="600" height="400" loading="lazy" alt="">
+          </picture>
+          <h3>Resgate e Reabilitação</h3>
+          <p>Atendimento veterinário, alimentação e carinho para aves, primatas e répteis apreendidos.</p>
+        </article>
+        <article>
+          <picture>
+            <img src="images/soltura.jpg" width="600" height="400" loading="lazy" alt="">
+          </picture>
+          <h3>Soltura Responsável</h3>
+          <p>O momento mais bonito: devolver o animal ao habitat de origem e acompanhar sua adaptação.</p>
+        </article>
+        <article>
+          <picture>
+            <img src="images/educacao.jpg" width="600" height="400" loading="lazy" alt="">
+          </picture>
+          <h3>Educação contra o Tráfico</h3>
+          <p>Palestras em escolas para que as próximas gerações aprendam que animal silvestre não se compra.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="suave" id="voluntariado">
+      <div class="conteudo secao">
+        <h2>Seja voluntário</h2>
+        <p>Você não precisa ser veterinário para ajudar. Veja onde precisamos de você:</p>
+        <ul>
+          <li><strong>Auxiliar de tratador:</strong> preparo de alimentos e limpeza dos recintos (fins de semana).</li>
+          <li><strong>Educação ambiental:</strong> apoio nas palestras em escolas.</li>
+          <li><strong>Veterinários e biólogos:</strong> plantões voluntários quinzenais.</li>
+        </ul>
+        <p>Todo voluntário recebe certificado de participação.</p>
+        <p><a class="botao" href="cadastro.html">Quero me inscrever</a></p>
+      </div>
+    </section>
+
+    <section class="conteudo secao" id="doar">
+      <h2>Doe e dê uma segunda chance</h2>
+      <p>Cada animal que chega até nós precisa de comida, remédio e cuidado. Escolha um valor e veja o que ele faz:</p>
+
+      <div class="valores">
+        <button type="button" class="valor" data-valor="30" aria-pressed="false">R$ 30 <span>alimenta uma ave por um mês</span></button>
+        <button type="button" class="valor" data-valor="60" aria-pressed="false">R$ 60 <span>compra remédios para um filhote</span></button>
+        <button type="button" class="valor" data-valor="120" aria-pressed="false">R$ 120 <span>paga uma consulta veterinária completa</span></button>
+        <button type="button" class="valor" data-valor="250" aria-pressed="false">R$ 250 <span>financia a soltura de um animal</span></button>
+      </div>
+      <p id="texto-doacao" role="status">Escolha um valor acima para continuar.</p>
+
+      <div class="caixa">
+        <h3>Doe por Pix</h3>
+        <p>Chave (CNPJ): <code id="pix">45.678.901/0001-23</code></p>
+        <p><button type="button" id="copiar" class="botao">Copiar chave Pix</button> <span id="aviso" role="status"></span></p>
+      </div>
+
+      <h3>Campanha: novo viveiro de reabilitação</h3>
+      <p><label for="meta">R$ 21.000 arrecadados de R$ 30.000 (70%)</label></p>
+      <progress id="meta" value="70" max="100">70%</progress>
+      <p>Prestamos contas a cada seis meses e publicamos como cada real foi usado.</p>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>© 2026 Asas Livres – trabalho acadêmico, dados fictícios.</p>
+  </footer>
+</body>
+</html>

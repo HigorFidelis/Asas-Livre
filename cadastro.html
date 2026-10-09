@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro – Asas Livres</title>
+  <meta name="description" content="Cadastre-se como voluntário ou apoiador da Asas Livres e faça parte da luta contra o tráfico de animais.">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="topo">
+    <div class="conteudo">
+      <a class="logo" href="index.html"><img src="images/logo.svg" alt="" width="32" height="32"> Asas Livres</a>
+      <nav aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="cadastro.html" aria-current="page">Cadastro</a>
+        <a href="membros.html">Novos membros</a>
+        <a class="destaque" href="projetos.html#doar">Doar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="conteudo secao">
+    <h1>Faça parte das Asas Livres</h1>
+    <p>Preencha o cadastro para ser voluntário ou apoiador. Depois do envio, seu nome aparece na página de novos membros. Campos com * são obrigatórios.</p>
+    <picture>
+      <img src="images/membros.jpg" width="900" height="400" alt="Voluntários de mãos dadas em frente a um viveiro">
+    </picture>
+
+    <form id="formulario" action="#" method="post">
+      <fieldset>
+        <legend>Dados pessoais</legend>
+        <p><label for="nome">Nome completo *</label>
+          <input type="text" id="nome" name="nome" required minlength="5" maxlength="100" autocomplete="name" placeholder="Maria da Silva"></p>
+        <p><label for="email">E-mail *</label>
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="maria@email.com"></p>
+        <p><label for="cpf">CPF *</label>
+          <input type="text" id="cpf" name="cpf" required maxlength="14" inputmode="numeric" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Use o formato 000.000.000-00" placeholder="000.000.000-00" data-mascara="cpf"></p>
+        <p><label for="telefone">Telefone *</label>
+          <input type="tel" id="telefone" name="telefone" required maxlength="15" inputmode="numeric" pattern="\(\d{2}\) \d{4,5}-\d{4}" title="Use o formato (11) 98765-4321" placeholder="(11) 98765-4321" data-mascara="telefone"></p>
+        <p><label for="nascimento">Data de nascimento *</label>
+          <input type="date" id="nascimento" name="nascimento" required min="1900-01-01"></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Endereço</legend>
+        <p><label for="cep">CEP *</label>
+          <input type="text" id="cep" name="cep" required maxlength="9" inputmode="numeric" pattern="\d{5}-\d{3}" title="Use o formato 00000-000" placeholder="00000-000" data-mascara="cep"></p>
+        <p><label for="endereco">Endereço (rua e número) *</label>
+          <input type="text" id="endereco" name="endereco" required maxlength="120" autocomplete="street-address"></p>
+        <p><label for="cidade">Cidade *</label>
+          <input type="text" id="cidade" name="cidade" required maxlength="60"></p>
+        <p><label for="estado">Estado *</label>
+          <select id="estado" name="estado" required>
+            <option value="">Selecione</option>
+            <option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option>
+          </select></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Como quer participar? *</legend>
+        <p><input type="radio" id="voluntario" name="perfil" value="voluntario" required> <label for="voluntario" class="inline">Voluntário</label></p>
+        <p><input type="radio" id="apoiador" name="perfil" value="apoiador"> <label for="apoiador" class="inline">Doador/apoiador</label></p>
+        <p><input type="checkbox" id="termos" name="termos" required> <label for="termos" class="inline">Aceito ser contatado pela ONG e exibir meu nome na lista de novos membros. *</label></p>
+      </fieldset>
+
+      <p><button type="submit" class="botao">Enviar cadastro</button></p>
+    </form>
+  </main>
+
+  <footer class="rodape">
+    <p>© 2026 Asas Livres – trabalho acadêmico, dados fictícios.</p>
+  </footer>
+</body>
+</html>

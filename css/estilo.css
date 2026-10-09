@@ -1,0 +1,394 @@
+/* ===== Cores e configurações gerais (mobile-first) ===== */
+:root {
+  --texto: #1c1c1c;
+  --suave: #f5f3f1;
+  --destaque: #9b2335;
+  --destaque-escuro: #6f1626;
+  --linha: #dddad6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  color: var(--texto);
+  background: #ffffff;
+  overflow-x: hidden;          /* esconde qualquer rolagem lateral */
+  overflow-wrap: break-word;   /* quebra palavras muito longas */
+}
+
+/* Itens das grades podem encolher em vez de empurrar a página */
+.colunas > *,
+.duas > *,
+.valores > *,
+.membros > * {
+  min-width: 0;
+}
+
+button {
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--destaque);
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.7rem; }
+h3 { font-size: 1.25rem; }
+
+/* Foco visível para quem usa o teclado */
+a:focus, button:focus, input:focus, select:focus {
+  outline: 3px solid var(--destaque);
+  outline-offset: 3px;
+}
+
+.conteudo {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.secao {
+  padding: 50px 0;
+}
+
+.suave {
+  background: var(--suave);
+}
+
+.aviso {
+  font-size: 0.85rem;
+  color: #5a5a5a;
+}
+
+/* ===== Cabeçalho ===== */
+.topo {
+  border-bottom: 1px solid var(--linha);
+  padding: 12px 0;
+}
+
+.topo .conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: Georgia, serif;
+  font-size: 1.4rem;
+  color: var(--texto);
+  text-decoration: none;
+}
+
+nav a {
+  color: var(--texto);
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-right: 14px;
+  padding: 4px 0;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  border-bottom: 2px solid var(--destaque);
+}
+
+nav a.destaque {
+  background: var(--destaque);
+  color: #ffffff;
+  padding: 6px 14px;
+  margin-right: 0;
+  border-bottom: none;
+}
+
+/* ===== Banner inicial ===== */
+.hero {
+  position: relative;
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Camada escura para o texto ficar legível */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.hero .conteudo {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin-left: 5%;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+}
+
+/* ===== Botões ===== */
+.botao {
+  display: inline-block;
+  background: var(--destaque);
+  color: #ffffff;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 12px 24px;
+  border: 2px solid var(--destaque);
+  cursor: pointer;
+}
+
+.botao:hover {
+  background: var(--destaque-escuro);
+  border-color: var(--destaque-escuro);
+}
+
+.botao.contorno {
+  background: transparent;
+  border-color: #ffffff;
+}
+
+.botao.contorno:hover {
+  background: #ffffff;
+  color: var(--texto);
+}
+
+/* ===== Textos e blocos ===== */
+.duas,
+.colunas {
+  display: grid;
+  gap: 24px;
+}
+
+blockquote {
+  margin: 0 0 16px;
+  padding-left: 16px;
+  border-left: 3px solid var(--destaque);
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.3rem;
+}
+
+.colunas article {
+  border-top: 2px solid var(--destaque);
+  padding-top: 12px;
+}
+
+/* Imagens com tamanho padronizado: a foto é cortada para caber (object-fit) */
+.colunas img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.duas img {
+  width: 100%;
+  aspect-ratio: 7 / 5;
+  object-fit: cover;
+}
+
+main > img {
+  width: 100%;
+  aspect-ratio: 9 / 4;
+  object-fit: cover;
+}
+
+.numeros {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.numeros strong {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 2.6rem;
+  font-weight: normal;
+  color: var(--destaque);
+}
+
+address {
+  font-style: normal;
+}
+
+/* ===== Doação ===== */
+.valores {
+  display: grid;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.valor {
+  text-align: left;
+  font-family: Georgia, serif;
+  font-size: 1.4rem;
+  padding: 14px 16px;
+  background: #ffffff;
+  color: var(--texto);
+  border: 1px solid var(--texto);
+  cursor: pointer;
+}
+
+.valor span {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+}
+
+.valor:hover {
+  border-color: var(--destaque);
+}
+
+.valor[aria-pressed="true"] {
+  background: var(--destaque);
+  border-color: var(--destaque);
+  color: #ffffff;
+}
+
+#texto-doacao {
+  font-weight: bold;
+}
+
+.caixa {
+  background: var(--suave);
+  padding: 20px;
+  margin: 24px 0;
+}
+
+progress {
+  width: 100%;
+  height: 16px;
+  accent-color: var(--destaque);
+}
+
+code {
+  background: #ffffff;
+  padding: 2px 8px;
+  border: 1px solid var(--linha);
+}
+
+/* ===== Formulário ===== */
+fieldset {
+  border: 1px solid var(--linha);
+  margin: 0 0 24px;
+  padding: 12px 20px;
+}
+
+legend {
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+  padding: 0 8px;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+label.inline {
+  display: inline;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #6b6b6b;
+  background: #ffffff;
+}
+
+input:user-invalid,
+select:user-invalid {
+  border-color: #b00020;
+  background: #fff5f6;
+}
+
+/* ===== Lista de novos membros ===== */
+.membros {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0 24px;
+}
+
+.membros li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--linha);
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+}
+
+/* ===== Rodapé ===== */
+.rodape {
+  background: var(--texto);
+  color: #ffffff;
+  text-align: center;
+  padding: 18px 0;
+}
+
+.rodape p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* ===== Tablet ===== */
+@media (min-width: 700px) {
+  h1 { font-size: 2.8rem; }
+  h2 { font-size: 2rem; }
+  .hero h1 { font-size: 3.4rem; }
+  .duas { grid-template-columns: 1fr 1fr; align-items: center; }
+  .colunas { grid-template-columns: repeat(3, 1fr); }
+  .numeros { grid-template-columns: repeat(3, 1fr); }
+  .valores { grid-template-columns: repeat(2, 1fr); }
+  .membros { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===== Desktop ===== */
+@media (min-width: 1000px) {
+  .hero { padding: 130px 0; }
+  .valores { grid-template-columns: repeat(4, 1fr); }
+  .membros { grid-template-columns: repeat(3, 1fr); }
+}
